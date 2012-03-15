@@ -34,9 +34,22 @@ class Application < Sinatra::Base
     @tweets = Tweet.where(:screen_name => "arolet").to_a
     slim :get_tweet
   end
+  
+  get '/last_tweet' do
+    @tweets = Tweet.last.to_a
+    slim :get_tweet
+  end
 
   get '/stylesheets/application.css' do
     sass :application
   end
 
+end
+
+scheduler = Rufus::Scheduler.start_new
+
+scheduler.every '1s' do
+  @tweet = Tweet.new(:screen_name=>"sergijonama",:lat=>1.2238293829382,:lon=>10.2238293829382,:time=>'03/04/2012 21:43:45',:num_retweets=>25, :status=>"Si no lo veo no lo creo")
+  @tweet.save
+  puts 'saved'
 end
