@@ -1,5 +1,17 @@
-Sinatra Prototype (in development)
+Sinatra Prototype
 ==================================
+
+Install
+---------------------
+First of all run bundle to setup gems
+    bundle install
+
+Install mongodb and run it
+    brew install mongodb
+    mongod run --config /usr/local/Cellar/mongodb/2.0.3-x86_64/mongod.conf
+
+Then you can run the server
+    rackup config.ru
 
 A Sinatra application
 ---------------------
