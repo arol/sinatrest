@@ -24,6 +24,17 @@ class Application < Sinatra::Base
     slim :index
   end
 
+  get '/nou_tweet' do
+      @tweet = Tweet.new(:screen_name=>"arolet",:lat=>1.2238293829382,:lon=>10.2238293829382,:time=>'03/04/2012 21:43:45',:num_retweets=>25, :status=>"nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!nos pegan!")
+      @tweet.save
+    slim :nou_tweet
+  end
+
+  get '/get_tweet' do
+    @tweets = Tweet.where(:screen_name => "arolet").to_a
+    slim :get_tweet
+  end
+
   get '/stylesheets/application.css' do
     sass :application
   end
