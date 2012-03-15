@@ -8,4 +8,5 @@ class Tweet
   field :lon
   field :time
   field :num_retweets
+  field :hashtag
 end

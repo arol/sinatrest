@@ -9,6 +9,11 @@ class Application < Sinatra::Base
     # Haml & Sass options
     set :sass, :style => :compressed
   end
+  
+  configure :development do
+    register Sinatra::Reloader
+    also_reload 'models'
+  end
 
   Mongoid.configure do |config|
     if ENV['MONGOHQ_URL']
@@ -25,7 +30,14 @@ class Application < Sinatra::Base
   end
 
   get '/nou_tweet' do
-      @tweet = Tweet.new(:screen_name=>"arolet",:lat=>1.2238293829382,:lon=>10.2238293829382,:time=>'03/04/2012 21:43:45',:num_retweets=>25, :status=>"Si no lo veo no lo creo")
+      @tweet = Tweet.new(
+        :screen_name=>"arolet",
+        :lat=>1.2238293829382,
+        :lon=>10.2238293829382,
+        :time=>'03/04/2012 21:43:45',
+        :num_retweets=>25,
+        :status=>"Nos pegaan!",
+        :hashtag=>"#pegan")
       @tweet.save
     slim :nou_tweet
   end
