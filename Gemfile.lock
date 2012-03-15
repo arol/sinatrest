@@ -31,7 +31,11 @@ GEM
     extlib (0.9.15)
     ffi (1.0.7)
       rake (>= 0.8.7)
+    ffi (1.0.7-x86-mingw32)
+      rake (>= 0.8.7)
     gherkin (2.3.3)
+      json (~> 1.4.6)
+    gherkin (2.3.3-x86-mingw32)
       json (~> 1.4.6)
     haml (3.0.25)
     highline (1.6.1)
@@ -48,6 +52,7 @@ GEM
       mongo (~> 1.2.1)
       will_paginate (< 2.9)
     nokogiri (1.4.4)
+    nokogiri (1.4.4-x86-mingw32)
     rack (1.2.2)
     rack-test (0.5.7)
       rack (>= 1.0)
@@ -89,6 +94,7 @@ GEM
 
 PLATFORMS
   ruby
+  x86-mingw32
 
 DEPENDENCIES
   bson_ext (= 1.2.4)
