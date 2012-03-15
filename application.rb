@@ -45,22 +45,22 @@ class Application < Sinatra::Base
   end
 
 end
-
-scheduler = Rufus::Scheduler.start_new
-flag=false;
-scheduler.every '1s', :blocking => true  do
-  @tweet = Tweet.new(:screen_name=>"sergijonama",:lat=>1.2238293829382,:lon=>10.2238293829382,:time=>'03/04/2012 21:43:45',:num_retweets=>25, :status=>"Si no lo veo no lo creo")
-  
-  if flag == false
-    @tweet.save
-    flag = true
-    puts 'saved'
-  else
-    flag = false
-  end
-  
-
-end
+# 
+# scheduler = Rufus::Scheduler.start_new
+# ENV['flag']=false;
+# scheduler.every '1s', :blocking => true  do
+#   @tweet = Tweet.new(:screen_name=>"sergijonama",:lat=>1.2238293829382,:lon=>10.2238293829382,:time=>'03/04/2012 21:43:45',:num_retweets=>25, :status=>"Si no lo veo no lo creo")
+#   
+#   if ENV['flag'] == false
+#     @tweet.save
+#     ENV['flag'] = true
+#     puts 'saved'
+#   else
+#     ENV['flag'] = false
+#   end
+#   
+# 
+# end
 
 
 
