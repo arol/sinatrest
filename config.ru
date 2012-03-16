@@ -3,7 +3,7 @@ require 'sinatra'
 require 'slim'
 require 'haml'
 require 'mongoid'
-require './application'
 require 'rufus/scheduler'
+require './application'
 
 run Application
