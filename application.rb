@@ -45,7 +45,8 @@ class Application < Sinatra::Base
   end
 
 end
-# 
+
+
 # scheduler = Rufus::Scheduler.start_new
 # ENV['flag']=false;
 # scheduler.every '1s', :blocking => true  do

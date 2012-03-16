@@ -26,6 +26,7 @@ GEM
     cucumber-sinatra (0.3.0)
       templater (>= 1.0.0)
     culerity (0.2.15)
+    daemons (1.1.8)
     diff-lcs (1.1.2)
     durran-validatable (2.0.1)
     extlib (0.9.15)
@@ -104,6 +105,7 @@ DEPENDENCIES
   capybara
   cucumber
   cucumber-sinatra
+  daemons
   haml
   rack-test
   rspec

@@ -6,6 +6,7 @@ gem "bson_ext", "1.2.4"
 gem 'slim'
 gem 'haml'
 gem "rufus-scheduler"
+gem 'daemons'
 
 group :test do
   gem "rspec"
